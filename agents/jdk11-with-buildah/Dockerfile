@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y \
         gosu \
         maven \
         gradle \
+        fuse-overlayfs \
     && rm -rf /var/lib/apt/lists/* \
        /tmp/* \
        /var/tmp/*
@@ -20,5 +21,6 @@ RUN curl -fsSL https://download.opensuse.org/repositories/devel:/kubic:/libconta
     apt-get update && \
     apt-get install -y buildah
 
-USER jenkins
-ENV USER jenkins
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+
+ENTRYPOINT [ "entrypoint.sh" ]

@@ -31,7 +31,6 @@ RUN curl -fSL "https://github.com/genuinetools/img/releases/download/v$IMG_VERSI
 	&& echo "$IMG_SHA256  /usr/local/bin/img" | sha256sum -c - \
 	&& chmod a+x "/usr/local/bin/img"
 
-RUN chmod u+s /usr/bin/newuidmap /usr/bin/newgidmap
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 
-USER jenkins
-ENV USER jenkins
+ENTRYPOINT [ "entrypoint.sh" ]
