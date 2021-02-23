@@ -1,0 +1,13 @@
+configuration-as-code:latest
+git:latest
+github-branch-source:latest
+matrix-auth:latest
+oic-auth:latest
+bouncycastle-api:latest
+jdk-tool:latest
+command-launcher:latest
+workflow-aggregator:latest
+kubernetes
+kubernetes-credentials-provider
+kubernetes-cli
+ansicolor
