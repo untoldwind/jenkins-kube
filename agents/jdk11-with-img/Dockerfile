@@ -33,4 +33,6 @@ RUN curl -fSL "https://github.com/genuinetools/img/releases/download/v$IMG_VERSI
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 
+ENV USER jenkins
+
 ENTRYPOINT [ "entrypoint.sh" ]
