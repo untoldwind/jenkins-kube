@@ -13,3 +13,4 @@ kubernetes-cli
 ansicolor
 config-file-provider:latest
 pipeline-utility-steps:latest
+environment-dashboard:latest
