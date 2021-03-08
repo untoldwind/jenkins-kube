@@ -53,11 +53,10 @@ ARG IMG_SHA256=cc9bf08794353ef57b400d32cd1065765253166b0a09fba360d927cfbd158088
 
 RUN curl -fSL "https://github.com/genuinetools/img/releases/download/v$IMG_VERSION/img-linux-amd64" -o "/usr/local/bin/img" \
 	&& echo "$IMG_SHA256  /usr/local/bin/img" | sha256sum -c - \
-	&& chmod a+x "/usr/local/bin/img"
+	&& chmod a+x "/usr/local/bin/img" \
+    && chmod 777 /run
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
-
-ENV XDG_RUNTIME_DIR=/tmp
 
 ENV USER jenkins
 
