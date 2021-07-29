@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.302-slim
+FROM jenkins/jenkins:2.304-slim
 
 ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
 ENV CASC_JENKINS_CONFIG /run/share/config/casc.yaml
